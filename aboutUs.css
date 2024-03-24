@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end; /* Change from space-between to flex-end */
+    align-items: center;
+    height: 100px;
+    padding: 0 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 40px;
+    color: white;
+}
+header nav {
+    display: flex;
+    gap: 30px;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 99px;
+    transition: 0.3s;
+    color: white;
+}
+header nav a.active {
+    background: #e40707;
+}
+header nav a:hover {
+    background: #e10a0a;
+}
+header nav:hover > a:not(:hover) {
+    background: none;
+}
+
+.home {
+    display: flex;
+    height: 100dvh;
+    background: linear-gradient(to top, #D2E2FB 30%, #86A8DB);
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+  width: 95px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+  opacity: 2;
+  border-radius: 50%;
+}
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 99px;
+    transition: background 0.3s;
+    color: white;
+}
+
+nav a.active, nav a:hover {
+    background: #e60606;
+}
+
+section.about {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Center the container horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info h2 {
+    color: #e69f9f;
+    margin-bottom: 20px;
+}
+
+.social a {
+    color: #eca7a7;
+    font-size: 44px;
+    margin-right: 20px;
+}
+
+
+.social a:hover {
+    color: #e60e0e;
+}
+
+.info p {
+    font-size: 20px; /* Adjust the font size as needed */
+}
+.info h2{
+    font-size: 40px;
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        padding: 0 3%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 30px; /* Decrease font size for better fit */
+    }
+    header nav {
+        gap: 15px; /* Reduce the gap between navigation items */
+    }
+    header nav a {
+        font-size: 16px; /* Decrease font size for better fit */
+        padding: 6px 12px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 60px; /* Decrease font size for better fit */
+    }
+    section.about {
+        padding: 30px 5%; /* Decrease padding for better use of space */
+    }
+    .info h2 {
+        font-size: 30px; /* Decrease font size for better fit */
+    }
+    .social a {
+        font-size: 30px; /* Decrease font size for better fit */
+        margin-right: 10px; /* Adjust margin for better spacing */
+    }
+    .info p {
+        font-size: 16px; /* Decrease font size for better fit */
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    header {
+        padding: 0 4%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 32px; /* Further decrease font size for better fit */
+    }
+    header nav {
+        gap: 20px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 18px; /* Decrease font size for better fit */
+        padding: 8px 14px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 64px; /* Adjust font size for better fit */
+    }
+    section.about {
+        padding: 40px 5%; /* Adjust padding for better use of space */
+    }
+    .info h2 {
+        font-size: 32px; /* Adjust font size for better fit */
+    }
+    .social a {
+        font-size: 36px; /* Adjust font size for better fit */
+        margin-right: 15px; /* Adjust margin for better spacing */
+    }
+    .info p {
+        font-size: 18px; /* Adjust font size for better fit */
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    header {
+        padding: 0 6%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 34px; /* Further decrease font size for better fit */
+    }
+    header nav {
+        gap: 25px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 18px; /* Decrease font size for better fit */
+        padding: 10px 16px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 68px; /* Adjust font size for better fit */
+    }
+    section.about {
+        padding: 45px 5%; /* Adjust padding for better use of space */
+    }
+    .info h2 {
+        font-size: 34px; /* Adjust font size for better fit */
+    }
+    .social a {
+        font-size: 40px; /* Adjust font size for better fit */
+        margin-right: 18px; /* Adjust margin for better spacing */
+    }
+    .info p {
+        font-size: 20px; /* Adjust font size for better fit */
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 770px) {
+    header {
+        padding: 0 8%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 36px; /* Further decrease font size for better fit */
+    }
+    header nav {
+        gap: 30px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 20px; /* Keep font size consistent */
+        padding: 12px 18px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 72px; /* Keep font size consistent */
+    }
+    section.about {
+        padding: 50px 5%; /* Adjust padding for better use of space */
+    }
+    .info h2 {
+        font-size: 36px; /* Keep font size consistent */
+    }
+    .social a {
+        font-size: 44px; /* Keep font size consistent */
+        margin-right: 20px; /* Keep margin consistent */
+    }
+    .info p {
+        font-size: 22px; /* Keep font size consistent */
+    }
+}
+
+@media screen and (min-width: 771px) and (max-width: 1025px) {
+    header {
+        padding: 0 10%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 40px; /* Keep font size consistent */
+    }
+    header nav {
+        gap: 35px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 22px; /* Keep font size consistent */
+        padding: 14px 20px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 76px; /* Keep font size consistent */
+    }
+    section.about {
+        padding: 55px 5%; /* Adjust padding for better use of space */
+    }
+    .info h2 {
+        font-size: 40px; /* Keep font size consistent */
+    }
+    .social a {
+        font-size: 50px; /* Adjust font size for better fit */
+        margin-right: 25px; /* Adjust margin for better spacing */
+    }
+    .info p {
+        font-size: 24px; /* Adjust font size for better fit */
+    }
+}

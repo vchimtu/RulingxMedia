@@ -1,0 +1,340 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@media screen and (max-width: 600px) {
+
+    
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+header h1 {
+    font-size: 40px;
+    color: white;
+}
+header nav {
+    display: flex;
+    gap: 30px;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 99px;
+    transition: 0.3s;
+    color: white;
+}
+header nav a.active {
+    background: #f90505;
+}
+header nav a:hover {
+    background: #ff0000;
+}
+header nav:hover > a:not(:hover) {
+    background: none;
+}
+
+.home {
+    display: flex;
+    height: 100dvh;
+    background: linear-gradient(to top, #D2E2FB 30%, #86A8DB);
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.home img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.home .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 80px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about {
+    padding: 50px;
+ background: #162436;
+    color: rgb(253 245 241);
+    position: relative;
+    z-index: 100;
+}
+.about h1 {
+    font-size: 40px;
+}
+
+header img{
+    width: 95px;
+  position: relative;
+  top: -1px;
+  left: -60px;
+  font-size: 18px;
+  opacity: 2;
+  border-radius: 50%;
+}
+ */ 
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+header h1 {
+    font-size: 40px;
+    color: white;
+}
+header nav {
+    display: flex;
+    gap: 30px;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 99px;
+    transition: 0.3s;
+    color: white;
+    background-color: transparent;
+}
+header nav a.active {
+    background: #f90505;
+}
+header nav a:hover {
+    background: #ff0000;
+}
+header nav a.active,
+header nav a:hover {
+    background: #ff0000; /* Change background color on hover and when active */
+}
+
+.home {
+    display: flex;
+    height: 100dvh;
+     background: linear-gradient(to top, #D2E2FB 30%, #86A8DB); 
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+}
+
+.home img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.home .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 80px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about {
+    padding: 50px;
+    background: #162436;
+    color: rgb(253 245 241);
+    position: relative;
+    z-index: 100;
+}
+.about h1 {
+    font-size: 40px;
+}
+
+header img {
+    width: 95px;
+    position: relative;
+    top: -1px;
+    left: -60px;
+    font-size: 18px;
+    opacity: 2;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        padding: 0 3%;
+    }
+    header h1 {
+        font-size: 30px; /* Decrease font size for better fit */
+    }
+    header nav {
+        gap: 15px; /* Reduce the gap between navigation items */
+    }
+    header nav a {
+        font-size: 16px; /* Decrease font size for better fit */
+        padding: 6px 12px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 60px; /* Decrease font size for better fit */
+    }
+    .about {
+        padding: 30px; /* Decrease padding for better use of space */
+    }
+    .about h1 {
+        font-size: 30px; /* Decrease font size for better fit */
+    }
+    header img {
+        width: 75px; /* Decrease width of the logo for better fit */
+        left: -40px; /* Adjust position of the logo */
+        font-size: 16px; /* Decrease font size for better fit */
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    header {
+        padding: 0 4%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 34px; /* Further decrease font size for better fit */
+    }
+    header nav {
+        gap: 20px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 18px; /* Increase font size for better readability */
+        padding: 8px 14px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 70px; /* Increase font size for better fit */
+    }
+    .about {
+        padding: 40px; /* Increase padding for better use of space */
+    }
+    .about h1 {
+        font-size: 34px; /* Further decrease font size for better fit */
+    }
+    header img {
+        width: 85px; /* Increase width of the logo for better fit */
+        left: -50px; /* Further adjust position of the logo */
+        font-size: 16px; /* Keep font size consistent */
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    header {
+        padding: 0 6%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 36px; /* Further decrease font size for better fit */
+    }
+    header nav {
+        gap: 25px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 18px; /* Keep font size consistent */
+        padding: 10px 16px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 72px; /* Keep font size consistent */
+    }
+    .about {
+        padding: 45px; /* Increase padding for better use of space */
+    }
+    .about h1 {
+        font-size: 36px; /* Keep font size consistent */
+    }
+    header img {
+        width: 90px; /* Increase width of the logo for better fit */
+        left: -55px; /* Further adjust position of the logo */
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 770px) {
+    header {
+        padding: 0 8%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 38px; /* Further decrease font size for better fit */
+    }
+    header nav {
+        gap: 30px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 20px; /* Increase font size for better readability */
+        padding: 12px 18px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 74px; /* Keep font size consistent */
+    }
+    .about {
+        padding: 50px; /* Increase padding for better use of space */
+    }
+    .about h1 {
+        font-size: 38px; /* Keep font size consistent */
+    }
+    header img {
+        width: 95px; /* Keep width of the logo consistent */
+        left: -60px; /* Keep position of the logo consistent */
+    }
+}
+
+@media screen and (min-width: 771px) and (max-width: 1025px) {
+    header {
+        padding: 0 10%; /* Adjust padding for better spacing */
+    }
+    header h1 {
+        font-size: 40px; /* Keep font size consistent */
+    }
+    header nav {
+        gap: 35px; /* Increase the gap between navigation items */
+    }
+    header nav a {
+        font-size: 22px; /* Increase font size for better readability */
+        padding: 14px 20px; /* Adjust padding for better touch target */
+    }
+    .home .title {
+        font-size: 76px; /* Keep font size consistent */
+    }
+    .about {
+        padding: 55px; /* Increase padding for better use of space */
+    }
+    .about h1 {
+        font-size: 40px; /* Keep font size consistent */
+    }
+    header img {
+        width: 100px; /* Keep width of the logo consistent */
+        left: -65px; /* Keep position of the logo consistent */
+    }
+}

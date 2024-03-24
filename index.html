@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RulingXmedia</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Cursor Effect</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      color: #ec1f1f;
+      display: grid;
+      place-content: center;
+      /*background-image: url(https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);*/
+    }
+
+    .star {
+      transform-style: preserve-3d;
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      color: red;
+    }
+
+    .star:before {
+      position: absolute;
+      content: '\2726';
+      color: inherit;
+      inset: 0;
+      box-shadow: 0 0 1em 0.5em rgba(255, 0, 0, 0.133);
+      filter: drop-shadow(0 0 0.5em rgb(253, 5, 5));
+      text-shadow: 0 0 0.8em rgba(201, 24, 24, 0.333);
+    }
+  </style>
+
+  <!-- You can add any content you want here -->
+  <script>
+    let x1 = 0, y1 = 0;
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
+      dist_to_draw = 50,
+      delay = 1000,
+      fsize = ['1.1rem', '1.4rem', '.8rem', '1.7rem'],
+      colors = ['#E23636', '#F9F3EE', '#E1F8DC', '#B8AFE6', '#AEE1CD', '#5EB0E5'],
+      rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+      selRand = (o) => o[rand(0, o.length - 1)],
+      distanceTo = (x1, y1, x2, y2) => Math.sqrt((Math.pow(x2 - x1, 2)) + (Math.pow(y2 - y1, 2))),
+      shouldDraw = (x, y) => (distanceTo(x1, y1, x, y) >= dist_to_draw),
+      addStr = (x, y) => {
+        const str = document.createElement("div");
+        str.innerHTML = '&#10022';
+        str.className = 'star';
+        str.style.top = `${y + rand(-20, 20)}px`;
+        str.style.left = `${x}px`;
+        str.style.color = selRand(colors);
+        str.style.fontSize = selRand(fsize);
+        document.body.appendChild(str);
+        const fs = 10 + 5 * parseFloat(getComputedStyle(str).fontSize);
+        str.animate({
+          translate: `0 ${(y + fs) > vh ? vh - y : fs}px`,
+          opacity: 0,
+          transform: `rotateX(${rand(1, 500)}deg) rotateY(${rand(1, 500)}deg)`
+        }, {
+          duration: delay,
+          fill: 'forwards',
+        });
+        setTimeout(() => {
+          str.remove();
+        }, delay);
+      };
+    addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      if (shouldDraw(clientX, clientY)) {
+        addStr(clientX, clientY);
+        x1 = clientX;
+        y1 = clientY;
+      }
+    });
+  </script>
+</head>
+<body>
+
+    <header>
+        <!-- <h1>Logo</h1> -->
+        <img src="2main.jpg" alt="RulingXmedia Logo">
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="SERVCES.html">Services</a>
+            <a href="aboutUs.html">About</a>
+            <!-- <a href="#">Contact</a> -->
+        </nav>
+    </header>
+
+    <section class="home">
+        <img src="exded.png" alt="Main Image">
+    </section>
+
+    <section class="about">
+        <h1>Social Media Promotions</h1>
+        <br>
+        <p>In today's digital landscape, social media promotions have become an indispensable tool for businesses seeking to thrive and succeed. With the ever-expanding reach and influence of platforms like Facebook, Instagram, Twitter, and LinkedIn, harnessing the power of social media has evolved from a mere option to an imperative strategy for connecting with audiences, driving engagement, and ultimately achieving business objectives. From boosting brand visibility to nurturing customer relationships, social media promotions offer a dynamic platform for showcasing products, services, and brand personality in a captivating and interactive manner. Through strategic content creation, targeted advertising, and insightful analytics, businesses can navigate the complexities of the social media landscape with finesse, leveraging data-driven insights to optimize campaigns and maximize ROI. In an era where digital presence reigns supreme, embracing the potential of social media promotions is not just advantageous – it's essential for staying competitive and relevant in today's fast-paced and interconnected world.</p>
+        <br>
+        <p>
+            Promotions on social media platforms have fundamentally reshaped the trajectory of companies across various industries, ushering in an era of unprecedented opportunities for growth and brand engagement. With the expansive reach of platforms like Facebook, Instagram, Twitter, and LinkedIn, businesses can now connect with potential customers on a global scale, transcending geographical barriers and traditional marketing limitations. Through targeted advertising campaigns, organic content creation, and strategic engagement strategies, companies can cultivate a robust online presence, bolstering brand awareness and visibility among their target audience. Moreover, the interactive nature of social media fosters direct communication channels between businesses and consumers, enabling real-time feedback, customer support, and relationship building. This heightened level of engagement not only enhances brand loyalty but also provides invaluable insights into consumer preferences and market trends, empowering companies to tailor their products and marketing efforts accordingly. Furthermore, the cost-effectiveness and measurability of social media promotions offer a level playing field for businesses of all sizes, enabling startups and SMEs to compete with industry giants on a more equitable basis. By leveraging data-driven analytics and embracing innovative content strategies, companies can capitalize on the virality potential of social media, propelling their brand into the spotlight and driving sustained growth over time.
+            <br>
+            In essence, the strategic utilization of social media promotions has become indispensable for companies seeking to thrive in today's digital landscape, offering a dynamic platform for innovation, engagement, and long-term success.</p>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
